@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roda Giratória</title>
+	<style>
+		#roda {
+			width: 200px;
+			height: 200px;
+			border: 2px solid black;
+			border-radius: 50%;
+			position: relative;
+			animation: gira 2s linear infinite;
+		}
+
+		#seta {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+			width: 0;
+			height: 0;
+			border-top: 20px solid transparent;
+			border-left: 40px solid black;
+			border-bottom: 20px solid transparent;
+		}
+
+		@keyframes gira {
+			from {
+				transform: rotate(0);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<button id="botao">Girar</button>
+	<div id="roda">
+		<div id="seta"></div>
+	</div>
+	<script>
+		let botao = document.getElementById("botao");
+		let roda = document.getElementById("roda");
+
+		botao.addEventListener("click", function() {
+			roda.style.animation = "gira 2s linear infinite";
+		});
+	</script>
+</body>
+</html>
